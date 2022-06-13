@@ -6,7 +6,6 @@ import time
 from selenium.webdriver.chrome.service import Service #This will import the selenium service in the automation
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
-
 # Third Approach
 def open_url():
     s = Service(ChromeDriverManager().install()) # This will install driver automatically on the runtime and save it in the cache
