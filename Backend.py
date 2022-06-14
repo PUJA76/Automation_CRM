@@ -29,7 +29,7 @@ def open_url():
 
     login = driver.find_element(By.XPATH, '//input[@type="submit"]')
     login.click() #click() --> call click action
-    time.sleep(3)
+    time.sleep(2)
     #driver.quit()
 
 #Notification_Message module
@@ -46,9 +46,9 @@ def open_url():
     Type_reply = driver.find_element(By.XPATH, '//textarea[@id="txtReply"]')
     Type_reply.send_keys("Hello")
     time.sleep(2)
-    Send = driver.find_element(By.XPATH, '//input[@id="btnSend"]')
+    """Send = driver.find_element(By.XPATH, '//input[@id="btnSend"]')
     Send.click()
-    time.sleep(2)
+    time.sleep(2)"""
 
 #Notification module
     Notifications = driver.find_element(By.XPATH, '//a[contains(text(),"Notifications")]')
@@ -69,10 +69,11 @@ def open_url():
     Mobile_No = driver.find_element(By.XPATH, '//input[@id="MobileNo"]')
     Mobile_No.send_keys("9814542883")
     time.sleep(2)
-    Member_Birthday = driver.find_element(By.Xpath, '//input[@id="dtBFrom"]')
-    Member_Birthday.click()
-    setdatestring = "12/08/2008" #dd/mm/yy
-
+    Member_Birthday = driver.find_element(By.XPATH, '//input[@id="dtBFrom"]')
+    Member_Birthday.send_keys("12/08/2008") #mm/dd/yy
+    time.sleep(2)
+    Wedding_Aniversary = driver.find_element(By.XPATH, '//input[@id="dtWFrom"]')
+    Wedding_Aniversary.send_keys("05/25/2021")
     time.sleep(2)
     Submit = driver.find_element(By.XPATH, '//input[@type="submit"]')
     Submit.click()  # click() --> call click action
