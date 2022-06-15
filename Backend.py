@@ -46,9 +46,9 @@ def open_url():
     Type_reply = driver.find_element(By.XPATH, '//textarea[@id="txtReply"]')
     Type_reply.send_keys("Hello")
     time.sleep(2)
-    Send = driver.find_element(By.XPATH, '//input[@id="btnSend"]')
+    """Send = driver.find_element(By.XPATH, '//input[@id="btnSend"]')
     Send.click()
-    time.sleep(2)
+    time.sleep(2)"""
 
     #Notification module
     Notifications = driver.find_element(By.XPATH, '//a[contains(text(),"Notifications")]')
@@ -87,6 +87,17 @@ def open_url():
     Submit.click()  # click() --> call click action
     time.sleep(3)
 
+#FeedBacks Module
+    Feedbacks = driver.find_element(By.XPATH, '//a[normalize-space()="Category"]')
+    Feedbacks.click()
+    time.sleep(2)
+"""
+    Edit = driver.find_element(By.XPATH, '//a[contains(text(),"Edit"]')
+    Edit.click()
+    Edit = driver.find_element(By.XPATH, '//input[id="CNAME"')
+    Edit.send_keys("Demo ABC")
+    time.sleep(2) """
+    
 
 if __name__ == '__main__':
      open_url()
