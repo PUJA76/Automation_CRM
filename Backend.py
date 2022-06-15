@@ -2,6 +2,7 @@
 # pip3 install webdriver_manager --> This will install chrome driver in the runtime
 
 #import Member as Member
+#import By as By
 import notification as notification
 from selenium import webdriver
 import time
@@ -18,12 +19,12 @@ def open_url():
     driver.get('http://imsnepal.com:8080/test/User/Login?ReturnUrl=%2ftest%2f')  # To open the website
 
     username = driver.find_element(By.XPATH, '//input[@id="UNAME"]')
-    username.send_keys("yudip")
+    username.send_keys("Puja")
     time.sleep(2)  # To open the website upto certain interval
     #driver.quit()  # To quit the driver
 
     password = driver.find_element(By.XPATH, '//input[@id="Password"]')
-    password.send_keys("yudip123")
+    password.send_keys("puja123")
     time.sleep(2)
     #driver.quit()
 
@@ -41,14 +42,12 @@ def open_url():
     Message = driver.find_element(By.XPATH, '//a[contains(text(),"Message")]')
     Message.click()
     time.sleep(2)
+
     Reply = driver.find_element(By.XPATH, '//a[contains(text(),"Reply")]')
     Reply.click()
     Type_reply = driver.find_element(By.XPATH, '//textarea[@id="txtReply"]')
     Type_reply.send_keys("Hello")
     time.sleep(2)
-    """Send = driver.find_element(By.XPATH, '//input[@id="btnSend"]')
-    Send.click()
-    time.sleep(2)"""
 
 #Notification module
     Notifications = driver.find_element(By.XPATH, '//a[contains(text(),"Notifications")]')
@@ -87,17 +86,75 @@ def open_url():
     Submit.click()  # click() --> call click action
     time.sleep(3)
 
+
 #FeedBacks Module
     Feedbacks = driver.find_element(By.XPATH, '//a[normalize-space()="Category"]')
     Feedbacks.click()
     time.sleep(2)
-"""
-    Edit = driver.find_element(By.XPATH, '//a[contains(text(),"Edit"]')
-    Edit.click()
-    Edit = driver.find_element(By.XPATH, '//input[id="CNAME"')
+
+#Edit the existing Product.
+
+    """Edit_Category = driver.find_element(By.XPATH, '//input[@id="CNAME"])[1]')
+    Edit_Category.send_keys("Demo Category")
+    time.sleep(2)
+
+    Edit = driver.find_element(By.XPATH, '//input[id="CNAME"')   
     Edit.send_keys("Demo ABC")
     time.sleep(2) """
-    
+
+#Add New Category(Click)
+    Add_New_Category = driver.find_element(By.XPATH, '//a[normalize-space()="Add New Category"]')
+    Add_New_Category.click()
+    time.sleep(2)
+
+#Add New Category
+    Add = driver.find_element(By.XPATH, '//input[@id="CNAME"]')
+    Add.send_keys("Demo Category1")
+    time.sleep(2)
+
+#Submit the new category name.
+    Submit = driver.find_element(By.XPATH, '//input[@type="submit"]')
+    Submit.click()
+    time.sleep(2)
+
+#Product Promotion
+    Promotion = driver.find_element(By.XPATH, '//a[normalize-space()="Promotions"]') #(By.XPATH, '//a[contain(text),"Promotains")]')
+    Promotion.click()
+    time.sleep(2)
+
+    Add_New_Promotion = driver.find_element(By.XPATH, '//a[normalize-space()="Add New Promotion"]')
+    Add_New_Promotion.click()
+    time.sleep(2)
+
+#After clicking Add new product and goes to new page with this kind of form.
+    Product_Id = driver.find_element(By.XPATH, '//input[@id="PRODUCTID"]')
+    Product_Id.send_keys("001")
+    time.sleep(2)
+
+    Description = driver.find_element(By.XPATH, '//textarea[@id="DESCRIPTION"]')
+    Description.send_keys("This is test product")
+    time.sleep(2)
+
+    Begin_Date = driver.find_element(By.XPATH, '//input[@id="dtBegin"]')
+    Begin_Date.send_keys("06/15/2022")
+    time.sleep(2)
+
+    End_Date = driver.find_element(By.XPATH, '//input[@id="dtEnd"]')
+    End_Date.send_keys("12/28/2022")
+    time.sleep(2)
+
+    Message = driver.find_element(By.XPATH, '//textarea[@id="MESSAGE"]')
+    Message.send_keys("Hello World")
+    time.sleep(2)
+
+    Category = driver.find_element(By.XPATH, '//select[id="CATEGORYID"]')
+    Category.click()
+    time.sleep(2)
+
+#Adevertisement Module
+    Advertisement = driver.find_element(By.XPATH, '//a[contain((text(),"Advertisement")]')
+    Advertisement.click()
+    time.sleep(2)
 
 if __name__ == '__main__':
      open_url()
