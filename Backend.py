@@ -4,6 +4,8 @@
 #import Member as Member
 #import By as By
 import notification as notification
+#import numbers list
+#import random
 from selenium import webdriver
 import time
 from selenium.webdriver.chrome.service import Service #This will import the selenium service in the automation
@@ -15,6 +17,7 @@ from selenium.webdriver.common.by import By
 def open_url():
     s = Service(ChromeDriverManager().install()) # This will install driver automatically on the runtime and save it in the cache
     driver = webdriver.Chrome(service = s)
+    #driver.maximize.window()
     print(driver.title) #It will print the title in the console
     driver.get('http://imsnepal.com:8080/test/User/Login?ReturnUrl=%2ftest%2f')  # To open the website
 
@@ -56,24 +59,31 @@ def open_url():
 
     FilterMember = driver.find_element(By.XPATH, '//a[contains(text(),"FilterMember")]')
     FilterMember.click()
+
     Member_First_name = driver.find_element(By.XPATH, '//input[@id="MemberfName"]')
     Member_First_name.send_keys("Puja")  # send_keys() --> Type something
     time.sleep(2)
+
     Member_last_name = driver.find_element(By.XPATH, '//input[@id="MemberlName"]')
     Member_last_name.send_keys("Bohara")
     time.sleep(2)
+
     Street = driver.find_element(By.XPATH, '//input[@id="street"]')
     Street.send_keys("Putalishdak")
     time.sleep(2)
+
     Mobile_No = driver.find_element(By.XPATH, '//input[@id="MobileNo"]')
     Mobile_No.send_keys("9814542883")
     time.sleep(2)
+
     Member_Birthday = driver.find_element(By.XPATH, '//input[@id="dtBFrom"]')
     Member_Birthday.send_keys("12/08/2008") #mm/dd/yy
     time.sleep(2)
+
     Wedding_Aniversary = driver.find_element(By.XPATH, '//input[@id="dtWFrom"]')
     Wedding_Aniversary.send_keys("05/25/2021")
     time.sleep(2)
+
     Submit = driver.find_element(By.XPATH, '//input[@type="submit"]')
     Submit.click()  # click() --> call click action
     time.sleep(3)
@@ -82,25 +92,15 @@ def open_url():
     Common_Message = driver.find_element(By.XPATH, '//input[@id="CommonMessage"]')
     Common_Message.send_keys("New")
     time.sleep(2)
+
     Submit = driver.find_element(By.XPATH, '//input[@type="submit"]')
     Submit.click()  # click() --> call click action
     time.sleep(3)
-
 
 #FeedBacks Module
     Feedbacks = driver.find_element(By.XPATH, '//a[normalize-space()="Category"]')
     Feedbacks.click()
     time.sleep(2)
-
-#Edit the existing Product.
-
-    """Edit_Category = driver.find_element(By.XPATH, '//input[@id="CNAME"])[1]')
-    Edit_Category.send_keys("Demo Category")
-    time.sleep(2)
-
-    Edit = driver.find_element(By.XPATH, '//input[id="CNAME"')   
-    Edit.send_keys("Demo ABC")
-    time.sleep(2) """
 
 #Add New Category(Click)
     Add_New_Category = driver.find_element(By.XPATH, '//a[normalize-space()="Add New Category"]')
@@ -111,6 +111,21 @@ def open_url():
     Add = driver.find_element(By.XPATH, '//input[@id="CNAME"]')
     Add.send_keys("Demo Category1")
     time.sleep(2)
+
+# Edit the existing Product.
+    #Edit_Category = driver.find_element(By.XPATH, '//a[contains(text(),"Edit"]')
+    #number_list = [3]
+   # Edit_Category.click()
+    #dit_Category.setasName("Demo category")
+    Edit_Category = driver.find_element_by_link_text("Edit")
+
+    #Edit_Category.send_keys("Demo Category")
+    #time.sleep(2)
+
+    """Edit = driver.find_element(By.XPATH, '//input[id="CNAME"')   
+       Edit.send_keys("Demo ABC")
+       time.sleep(2) """
+
 
 #Submit the new category name.
     Submit = driver.find_element(By.XPATH, '//input[@type="submit"]')
@@ -147,17 +162,70 @@ def open_url():
     Message.send_keys("Hello World")
     time.sleep(2)
 
-    Category = driver.find_element(By.XPATH, '//select[id="CATEGORYID"]')
+    Category = driver.find_element(By.XPATH, '//select[@id="CATEGORYID"]')
     Category.click()
+    time.sleep(1)
+    Category.send_keys("test dfa")
     time.sleep(2)
 
-#Adevertisement Module
+    image_url = driver.find_element(By.XPATH, '//input[@id="IMAGEURL"]')
+    image_url.send_keys("http://imsnepal.com:8080/ImsPosMem/upload_images/TEST/PROMOTIONSIMAGE/201924-test.jfif")
+    time.sleep(2)
+
+    Discount_Percent = driver.find_element(By.XPATH, '//input[@id="DiscountPercent"]')
+    Discount_Percent.send_keys("10%")
+    time.sleep(2)
+
+#New_Product_old_Price
+    old_price = driver.find_element(By.XPATH, '//input[@id="OldPrice"]')
+    old_price.send_keys("500")
+    time.sleep(2)
+
+#Product New Price
+    New_price = driver.find_element(By.XPATH, '//input[@id="NewPrice"]')
+    New_price.send_keys("700")
+    time.sleep(2)
+
+    Save = driver.find_element(By.XPATH, '//input[@value="Save"]')
+    Save.click()
+    time.sleep(2)
+
+
+#Advertisement Module
     Advertisement = driver.find_element(By.XPATH, '//a[contain((text(),"Advertisement")]')
     Advertisement.click()
     time.sleep(2)
 
+#Branch
+    Branch = driver.find_element(By.XPATH, '//a[contain((text(), "Branch")]')
+    Branch.click()
+    time.sleep(2)
+
+# After Entering the Branch Add new Branch
+    Add_New_Branch = driver.find_element(By.XPATH, '//a[contain((text(), "Edit")]')
+    Add_New_Branch.click()
+    time.sleep(2)
+
+    Longitude = driver.find_element(By.XPATH, '//input[id="lon"]')
+    Longitude.send_keys("85.32305461277303")
+    time.sleep(2)
+
+    Latitude = driver.find_element(By.XPATH, '//input[id="lat"]')
+    Latitude.send_keys("27.714639384386423")
+    time.sleep(2)
+
+    Branch_Name = driver.find_element(By.XPATH, '//input[id="NAME"]')
+    Branch_Name.send_keys("Kathmandu Branch")
+    time.sleep(2)
+
+    Address = driver.find_element(By.XPATH, '//input[id="ADDRESS"]')
+    Address.send_keys("Kathmandu")
+    time.sleep(2)
+
+
+
 if __name__ == '__main__':
-     open_url()
+    open_url()
 
 
 """
