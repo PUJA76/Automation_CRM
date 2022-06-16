@@ -33,12 +33,12 @@ def open_url():
     time.sleep(2)
     #driver.quit()
 
-    #Notification_Message module
+#Notification_Message module
     notification_message = driver.find_element(By.XPATH, '//input[@id="Message"]')
     notification_message.send_keys("Hello")
     time.sleep(2)
 
-    #Message & Reply module
+#Message & Reply module
     Message = driver.find_element(By.XPATH, '//a[contains(text(),"Message")]')
     Message.click()
     time.sleep(2)
@@ -49,7 +49,7 @@ def open_url():
     Type_reply.send_keys("Hello")
     time.sleep(2)
 
-    #Notification module
+#Notification module
     Notifications = driver.find_element(By.XPATH, '//a[contains(text(),"Notifications")]')
     Notifications.click()
     time.sleep(2)
@@ -78,7 +78,7 @@ def open_url():
     Submit.click()  # click() --> call click action
     time.sleep(3)
 
-    #After the Member Profile Enter the Common Message .
+#After the Member Profile Enter the Common Message .
     Common_Message = driver.find_element(By.XPATH, '//input[@id="CommonMessage"]')
     Common_Message.send_keys("New")
     time.sleep(2)
