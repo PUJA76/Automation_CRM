@@ -2,10 +2,11 @@
 # pip3 install webdriver_manager --> This will install chrome driver in the runtime
 
 #import Member as Member
-#import By as By
+import by as by
 import notification as notification
 #import numbers list
 #import random
+
 from selenium import webdriver
 import time
 from selenium.webdriver.chrome.service import Service #This will import the selenium service in the automation
@@ -14,6 +15,7 @@ from selenium.webdriver.common.by import By
 
 # Third Approach
 #Login
+
 def open_url():
     s = Service(ChromeDriverManager().install()) # This will install driver automatically on the runtime and save it in the cache
     driver = webdriver.Chrome(service = s)
@@ -112,21 +114,24 @@ def open_url():
     Add.send_keys("Demo Category1")
     time.sleep(2)
 
-# Edit the existing Product.
-    #Edit_Category = driver.find_element(By.XPATH, '//a[contains(text(),"Edit"]')
-    #number_list = [3]
-   # Edit_Category.click()
-    #dit_Category.setasName("Demo category")
-    Edit_Category = driver.find_element_by_link_text("Edit")
+#Submit the new category name.
+    Submit = driver.find_element(By.XPATH, '//input[@type="submit"]')
+    Submit.click()
+    time.sleep(2)
 
-    #Edit_Category.send_keys("Demo Category")
-    #time.sleep(2)
+# Edit the existing Category.
+    Edit_Category = driver.find_element(By.LINK_TEXT, 'Edit')
+    Edit_Category.click()
+    time.sleep(5)
+# number_list = [3]
 
-    """Edit = driver.find_element(By.XPATH, '//input[id="CNAME"')   
-       Edit.send_keys("Demo ABC")
-       time.sleep(2) """
+    Edit_Category = driver.find_element(By.XPATH, '//input[id="CNAME"]')
+    #Edit_Category = driver.find_element(By.ID,'shoes').clear()
+    Edit_Category.send_keys("Ladies Shoes")
+    time.sleep(2)
+     
 
-
+"""
 #Submit the new category name.
     Submit = driver.find_element(By.XPATH, '//input[@type="submit"]')
     Submit.click()
@@ -222,7 +227,16 @@ def open_url():
     Address.send_keys("Kathmandu")
     time.sleep(2)
 
+    Contact = driver.find_element(By.XPATH, '//input[@id="CONTACT_NO"]')
+    Contact.send_keys("9814542883")
+    time.sleep(2)
 
+    Initial = driver.find_element(By.XPATH, '//input[@id="INITAL"]')
+    Initial.send_keys("Test")
+    time.sleep(2)
+
+    Store_Manager = driver.find.element(By.XPATH, '//input[@id=""')
+ """
 
 if __name__ == '__main__':
     open_url()
