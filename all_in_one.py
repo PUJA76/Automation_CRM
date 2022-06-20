@@ -109,7 +109,6 @@ def open_url():
     Add_New_Category.click()
     time.sleep(2)
 
-#Add New Category
     Add = driver.find_element(By.XPATH, '//input[@id="CNAME"]')
     Add.send_keys("Demo Category1")
     time.sleep(2)
