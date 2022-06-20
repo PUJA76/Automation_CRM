@@ -28,23 +28,28 @@ def open_url():
     login = driver.find_element(By.XPATH, '//input[@type="submit"]')
     login.click() #click() --> call click action
     time.sleep(2)
-    #driver.quit()
 
-    # Add New Category(Click)
+# Category Module
+    Category = driver.find_element(By.LINK_TEXT, 'Category')
+    Category.click()
+    time.sleep(2)
+
+# Click on "Add New Category"
     Add_New_Category = driver.find_element(By.XPATH, '//a[normalize-space()="Add New Category"]')
     Add_New_Category.click()
     time.sleep(2)
 
+    #Click "Submit" button after category name is given
     Add = driver.find_element(By.XPATH, '//input[@id="CNAME"]')
-    Add.send_keys("Demo Category1")
+    Add.send_keys("New Category")
     time.sleep(2)
 
-    # Submit the new category name.
+# Submit the new category name.
     Submit = driver.find_element(By.XPATH, '//input[@type="submit"]')
     Submit.click()
     time.sleep(2)
 
-    # Edit the existing Category.
+# Edit the existing Category.
     Edit_Category = driver.find_element(By.LINK_TEXT, 'Edit')
     Edit_Category.click()
     time.sleep(5)
@@ -55,6 +60,10 @@ def open_url():
     Edit_Category.send_keys("Ladies Shoes")
     time.sleep(2)
 
+#Submit the new category name.
+    Submit = driver.find_element(By.XPATH, '//input[@type="submit"]')
+    Submit.click()
+    time.sleep(2)
 
 if __name__ == '__main__':
     open_url()

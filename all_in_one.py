@@ -100,9 +100,9 @@ def open_url():
     time.sleep(3)
 
 #FeedBacks Module
-    Feedbacks = driver.find_element(By.XPATH, '//a[normalize-space()="Category"]')
+    Feedbacks = driver.find_element(By.LINK_TEXT, 'Feedbacks')
     Feedbacks.click()
-    time.sleep(2)
+    time.sleep(3)
 
 #Add New Category(Click)
     Add_New_Category = driver.find_element(By.XPATH, '//a[normalize-space()="Add New Category"]')
@@ -137,7 +137,7 @@ def open_url():
     time.sleep(2)
 
 #Product Promotion
-    Promotion = driver.find_element(By.XPATH, '//a[normalize-space()="Promotions"]') #(By.XPATH, '//a[contain(text),"Promotains")]')
+    Promotion = driver.find_element(By.XPATH, '//a[normalize-space()="Promotions"]') #(By.XPATH, '//a[contain(text),"Promotions")]')
     Promotion.click()
     time.sleep(2)
 
