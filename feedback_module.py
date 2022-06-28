@@ -31,7 +31,7 @@ def open_url():
     #driver.quit()
 
 
-#FeedBacks Module
+#FeedBacks Module --> See feedbacks sent by the customers
     Feedbacks = driver.find_element(By.LINK_TEXT, 'Feedbacks')
     Feedbacks.click()
     time.sleep(3)

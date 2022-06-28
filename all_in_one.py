@@ -92,7 +92,7 @@ def open_url():
 
 #After the Member Profile Enter the Common Message .
     Common_Message = driver.find_element(By.XPATH, '//input[@id="CommonMessage"]')
-    Common_Message.send_keys("New")
+    Common_Message.send_keys("New users")
     time.sleep(2)
 
     Submit = driver.find_element(By.XPATH, '//input[@type="submit"]')
@@ -124,13 +124,13 @@ def open_url():
     time.sleep(5)
 # number_list = [3]
 
+    """
     Edit_Category = driver.find_element(By.XPATH, '//input[id="CNAME"]')
     #Edit_Category = driver.find_element(By.ID,'shoes').clear()
     Edit_Category.send_keys("Ladies Shoes")
     time.sleep(2)
-     
+    """
 
-"""
 #Submit the new category name.
     Submit = driver.find_element(By.XPATH, '//input[@type="submit"]')
     Submit.click()
@@ -177,23 +177,22 @@ def open_url():
     time.sleep(2)
 
     Discount_Percent = driver.find_element(By.XPATH, '//input[@id="DiscountPercent"]')
-    Discount_Percent.send_keys("10%")
+    Discount_Percent.send_keys("1%")
     time.sleep(2)
 
 #New_Product_old_Price
     old_price = driver.find_element(By.XPATH, '//input[@id="OldPrice"]')
-    old_price.send_keys("500")
+    old_price.send_keys("50")
     time.sleep(2)
 
 #Product New Price
     New_price = driver.find_element(By.XPATH, '//input[@id="NewPrice"]')
-    New_price.send_keys("700")
+    New_price.send_keys("70")
     time.sleep(2)
 
-    Save = driver.find_element(By.XPATH, '//input[@value="Save"]')
-    Save.click()
-    time.sleep(2)
-
+   # Save = driver.find_element(By.XPATH, '//input[@id="submit"]')
+   # Save.click()
+   # time.sleep(2)
 
 #Advertisement Module
     Advertisement = driver.find_element(By.XPATH, '//a[contain((text(),"Advertisement")]')
@@ -234,15 +233,95 @@ def open_url():
     Initial.send_keys("Test")
     time.sleep(2)
 
-    Store_Manager = driver.find.element(By.XPATH, '//input[@id=""')
- """
+    Store_Manager = driver.find.element(By.XPATH, '//input[@id="STOREMANAGER"]')
+    Store_Manager.send_key("Mr. Ram keshwor Parshad")
+    time.sleep(2)
+
+    Email = driver.find_element(By.XPATH, '//input[@id="STOREMANAGEREMAIL"]')
+    Email.send_key("ramparshad875@gmail.com")
+    time.sleep(2)
+
+    image_url = driver.find_element(By.XPATH, '//input[@id="IMAGEURL"]')
+    image_url.send_key("https://en.wikipedia.org/wiki/Common_sunflower")
+    time.sleep(2)
+
+    submit = driver.find_element(By.XPATH, '//input[@id="submit"]')
+    submit.clear()
+    time.sleep(2)
+
+# Add new Users
+    User = driver.find_element(By.LINK_TEXT, 'Users')
+    User.click()
+    time.sleep(2)
+
+    Add_user = driver.find_element(By.LINK_TEXT, 'Add New User')
+    Add_user.click()
+    time.sleep(2)
+
+    user_name = driver.find_element(By.XPATH, '//input[@id="UNAME"]')
+    user_name.send_keys("DEF")
+    time.sleep(1)
+
+    password = driver.find_element(By.XPATH, '//input[@id="Password"]')
+    password.send_keys("abc123")
+    time.sleep(1)
+
+    Full_name = driver.find_element(By.XPATH, '//input[@id="FULLNAME"]')
+    Full_name.send_keys("Ramcharan Yadav")
+    time.sleep(1)
+
+    Address = driver.find_element(By.XPATH, '//input[@id="ADDRESS"]')
+    Address.send_keys("Putalisadak")
+    time.sleep(1)
+
+    Mobile_No = driver.find_element(By.XPATH, '//input[@id="MOBILENO"]')
+    Mobile_No.send_keys("9814542883")
+    time.sleep(1)
+
+    Replies = driver.find_element(By.XPATH, '//input[@name="REPLY"]')
+    Replies.click()
+    time.sleep(0.5)
+
+    Promotion = driver.find_element(By.XPATH, '//input[@id="PROMOTIONS"]')
+    Promotion.click()
+    time.sleep(0.5)
+
+    Advertisement = driver.find_element(By.XPATH, '//input[@id="ADVERTISEMENT"]')
+    Advertisement.click()
+    time.sleep(0.5)
+
+    users = driver.find_element(By.XPATH, '//input[@id="USERMANAGEMENT"]')
+    users.click()
+    time.sleep(0.5)
+
+    Order_scheme = driver.find_element(By.XPATH, '//input[@id="ORDERSCHEME"]')
+    Order_scheme.click()
+    time.sleep(0.5)
+
+    Order = driver.find_element(By.XPATH, '//input[@id="ORDERS"]')
+    Order.click()
+    time.sleep(0.5)
+
+    Notification = driver.find_element(By.XPATH, '//input[@id="NOTIFICATION"]')
+    Notification.click()
+    time.sleep(0.5)
+
+    Branch = driver.find_element(By.XPATH, '//input[@id="BRANCH"]')
+    Branch.click()
+    time.sleep(0.5)
+
+    Category = driver.find_element(By.XPATH, '//input[@id="ITEMCATEGORY"]')
+    Category.click()
+    time.sleep(0.5)
+
+    Submit = driver.find_element(By.XPATH, '//input[@type="submit"]')
+    Submit.click()
+    time.sleep(2)
 
 if __name__ == '__main__':
     open_url()
-    
-#Puja Bohara
 
-"""
-text() --> pull the text 
+
+""" text() --> pull the text 
 select() --> Select from dropdown
 """
