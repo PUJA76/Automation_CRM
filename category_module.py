@@ -54,10 +54,15 @@ def open_url():
     Edit_Category.click()
     time.sleep(5)
     # number_list = [3]
-
+    """
     Edit_Category = driver.find_element(By.XPATH, '//input[id="CNAME"]')
     # Edit_Category = driver.find_element(By.ID,'shoes').clear()
     Edit_Category.send_keys("Ladies Shoes")
+    time.sleep(2) """
+
+# To edit the category with new data.
+    Edit_Category = driver.find_element(By.XPATH, '//input[@id="CNAME"]')
+    Edit_Category.send_keys("45434")
     time.sleep(2)
 
 #Submit the new category name.

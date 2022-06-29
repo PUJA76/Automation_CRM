@@ -104,6 +104,11 @@ def open_url():
     Feedbacks.click()
     time.sleep(3)
 
+    # Category Module
+    Category = driver.find_element(By.LINK_TEXT, 'Category')
+    Category.click()
+    time.sleep(2)
+
 #Add New Category(Click)
     Add_New_Category = driver.find_element(By.XPATH, '//a[normalize-space()="Add New Category"]')
     Add_New_Category.click()
@@ -190,63 +195,69 @@ def open_url():
     New_price.send_keys("70")
     time.sleep(2)
 
-   # Save = driver.find_element(By.XPATH, '//input[@id="submit"]')
-   # Save.click()
-   # time.sleep(2)
-
+# Submit the new category name.
+    Submit = driver.find_element(By.XPATH, '//input[@type="submit"]')
+    Submit.click()
+    time.sleep(2)
+    """
 #Advertisement Module
-    Advertisement = driver.find_element(By.XPATH, '//a[contain((text(),"Advertisement")]')
+    Advertisement = driver.find_element(By.LINK_TEXT, 'Advertisement')
     Advertisement.click()
-    time.sleep(2)
+    time.sleep(2)  """
 
-#Branch
-    Branch = driver.find_element(By.XPATH, '//a[contain((text(), "Branch")]')
+
+# Branch module --> Add,Edit or Delete Branch
+    Branch = driver.find_element(By.LINK_TEXT, 'Branch')
     Branch.click()
-    time.sleep(2)
+    time.sleep(1)
 
-# After Entering the Branch Add new Branch
-    Add_New_Branch = driver.find_element(By.XPATH, '//a[contain((text(), "Edit")]')
+    # After Entering the Branch, Add a new Branch
+    Add_New_Branch = driver.find_element(By.LINK_TEXT, 'Add New Branch')
     Add_New_Branch.click()
-    time.sleep(2)
+    time.sleep(1)
 
+    # Ignore Longitude and Latitude
+    '''
+    # Now enter values in the fields
     Longitude = driver.find_element(By.XPATH, '//input[id="lon"]')
     Longitude.send_keys("85.32305461277303")
-    time.sleep(2)
+    time.sleep(1)
 
     Latitude = driver.find_element(By.XPATH, '//input[id="lat"]')
     Latitude.send_keys("27.714639384386423")
-    time.sleep(2)
+    time.sleep(1)
+'''
 
-    Branch_Name = driver.find_element(By.XPATH, '//input[id="NAME"]')
+    Branch_Name = driver.find_element(By.XPATH, '//input[@id="NAME"]')
     Branch_Name.send_keys("Kathmandu Branch")
-    time.sleep(2)
+    time.sleep(1)
 
-    Address = driver.find_element(By.XPATH, '//input[id="ADDRESS"]')
+    Address = driver.find_element(By.XPATH, '//input[@id="ADDRESS"]')
     Address.send_keys("Kathmandu")
-    time.sleep(2)
+    time.sleep(1)
 
     Contact = driver.find_element(By.XPATH, '//input[@id="CONTACT_NO"]')
     Contact.send_keys("9814542883")
-    time.sleep(2)
+    time.sleep(1)
 
-    Initial = driver.find_element(By.XPATH, '//input[@id="INITAL"]')
+    Initial = driver.find_element(By.XPATH, '//input[@id="INITIAL"]')
     Initial.send_keys("Test")
-    time.sleep(2)
+    time.sleep(1)
 
-    Store_Manager = driver.find.element(By.XPATH, '//input[@id="STOREMANAGER"]')
-    Store_Manager.send_key("Mr. Ram keshwor Parshad")
-    time.sleep(2)
+    Store_Manager = driver.find_element(By.XPATH, '//input[@name="STOREMANAGER"]')
+    Store_Manager.send_keys("Mr. Ram keshwor Parshad")
+    time.sleep(1)
 
     Email = driver.find_element(By.XPATH, '//input[@id="STOREMANAGEREMAIL"]')
-    Email.send_key("ramparshad875@gmail.com")
-    time.sleep(2)
+    Email.send_keys("ramparshad875@gmail.com")
+    time.sleep(1)
 
     image_url = driver.find_element(By.XPATH, '//input[@id="IMAGEURL"]')
-    image_url.send_key("https://en.wikipedia.org/wiki/Common_sunflower")
-    time.sleep(2)
+    image_url.send_keys("https://en.wikipedia.org/wiki/Common_sunflower")
+    time.sleep(1)
 
-    submit = driver.find_element(By.XPATH, '//input[@id="submit"]')
-    submit.clear()
+    submit = driver.find_element(By.XPATH, '//input[@type="submit"]')
+    submit.click()
     time.sleep(2)
 
 # Add new Users
@@ -259,7 +270,7 @@ def open_url():
     time.sleep(2)
 
     user_name = driver.find_element(By.XPATH, '//input[@id="UNAME"]')
-    user_name.send_keys("DEF")
+    user_name.send_keys("Deepak")
     time.sleep(1)
 
     password = driver.find_element(By.XPATH, '//input[@id="Password"]')
