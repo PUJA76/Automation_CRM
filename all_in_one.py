@@ -123,23 +123,20 @@ def open_url():
     Submit.click()
     time.sleep(2)
 
-# Edit the existing Category.
-    Edit_Category = driver.find_element(By.LINK_TEXT, 'Edit')
+    # Edit the existing Category.
+    Edit_Category = driver.find_element(By.XPATH, '(//a[contains(text(),"Edit")])[2]')
     Edit_Category.click()
-    time.sleep(5)
-# number_list = [3]
-
-    """
-    Edit_Category = driver.find_element(By.XPATH, '//input[id="CNAME"]')
-    #Edit_Category = driver.find_element(By.ID,'shoes').clear()
-    Edit_Category.send_keys("Ladies Shoes")
     time.sleep(2)
-    """
-
-#Submit the new category name.
-    Submit = driver.find_element(By.XPATH, '//input[@type="submit"]')
-    Submit.click()
+    category = driver.find_element(By.XPATH, '//input[@id="CNAME"]')
+    category.clear()
     time.sleep(2)
+
+# Remove the old data and enter new one.
+    Edit_Category = driver.find_element(By.XPATH, '//input[@id="CNAME"]')
+    Edit_Category.clear()
+    Edit_Category.send_keys("Ladies shoes")
+    time.sleep(2)
+
 
 #Product Promotion
     Promotion = driver.find_element(By.XPATH, '//a[normalize-space()="Promotions"]') #(By.XPATH, '//a[contain(text),"Promotions")]')
@@ -182,17 +179,20 @@ def open_url():
     time.sleep(2)
 
     Discount_Percent = driver.find_element(By.XPATH, '//input[@id="DiscountPercent"]')
-    Discount_Percent.send_keys("1%")
+    Discount_Percent.clear()
+    Discount_Percent.send_keys("10%")
     time.sleep(2)
 
 #New_Product_old_Price
     old_price = driver.find_element(By.XPATH, '//input[@id="OldPrice"]')
-    old_price.send_keys("50")
+    old_price.clear()
+    old_price.send_keys("500")
     time.sleep(2)
 
 #Product New Price
     New_price = driver.find_element(By.XPATH, '//input[@id="NewPrice"]')
-    New_price.send_keys("70")
+    New_price.clear()
+    New_price.send_keys("700")
     time.sleep(2)
 
 # Submit the new category name.

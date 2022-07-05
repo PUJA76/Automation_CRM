@@ -5,10 +5,20 @@ import notification as notification
 from selenium import webdriver
 import time
 from selenium.webdriver.chrome.service import Service #This will import the selenium service in the automation
+from selenium.webdriver.support.ui import Select
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
+import random
+#n: int = random.randint(1, 4)
+#num = print(n)
+
+
 #Login
-def open_url():
+class Select_by_index:
+    pass
+
+
+def open_url(drop=None):
     s = Service(ChromeDriverManager().install()) # This will install driver automatically on the runtime and save it in the cache
     driver = webdriver.Chrome(service = s)
     #driver.maximize.window()
@@ -49,21 +59,44 @@ def open_url():
     Submit.click()
     time.sleep(2)
 
+    """
 # Edit the existing Category.
+    Edit_Category = driver.find_element(By.XPATH, '//td[normalize-space()="helll"]')
+    #Edit_Category.click()
+    #time.sleep(2)
+    #Edit_Category.select_by_index(1)
     Edit_Category = driver.find_element(By.LINK_TEXT, 'Edit')
     Edit_Category.click()
     time.sleep(5)
-    # number_list = [3]
-    """
-    Edit_Category = driver.find_element(By.XPATH, '//input[id="CNAME"]')
-    # Edit_Category = driver.find_element(By.ID,'shoes').clear()
-    Edit_Category.send_keys("Ladies Shoes")
-    time.sleep(2) """
+   # Edit_Category.click()
+   #time.sleep(2) 
 
-# To edit the category with new data.
+    # Edit the existing Category.
+    Edit_Category = driver.find_element(By.LINK_TEXT, 'Edit')
+    Edit_Category.click()
+    time.sleep(5)
+    # number_list = [3]  """
+
+    # Edit the existing Category.
+    Edit_Category = driver.find_element(By.XPATH, '(//a[contains(text(),"Edit")])[2]')
+    Edit_Category.click()
+    time.sleep(2)
+    category = driver.find_element(By.XPATH, '//input[@id="CNAME"]')
+    category.clear()
+    time.sleep(2)
+
+
+# Remove the old data and enter new one.
+    Edit_Category = driver.find_element(By.XPATH, '//input[@id="CNAME"]')
+    Edit_Category.clear()
+    Edit_Category.send_keys("T-Shirt")
+    time.sleep(2)
+
+    """
+#Add the more keys in existing data.
     Edit_Category = driver.find_element(By.XPATH, '//input[@id="CNAME"]')
     Edit_Category.send_keys("45434")
-    time.sleep(2)
+    time.sleep(2) """
 
 #Submit the new category name.
     Submit = driver.find_element(By.XPATH, '//input[@type="submit"]')

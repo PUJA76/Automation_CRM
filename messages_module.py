@@ -8,7 +8,6 @@ from selenium.webdriver.chrome.service import Service  # This will import the se
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 
-
 # Login
 def open_url():
     s = Service(

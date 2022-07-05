@@ -40,5 +40,59 @@ def open_url():
     Add_New_Promotion.click()
     time.sleep(2)
 
+    # After clicking Add new product and goes to new page with this kind of form.
+    Product_Id = driver.find_element(By.XPATH, '//input[@id="PRODUCTID"]')
+    Product_Id.send_keys("001")
+    time.sleep(2)
+
+    Description = driver.find_element(By.XPATH, '//textarea[@id="DESCRIPTION"]')
+    Description.send_keys("This is test product")
+    time.sleep(2)
+
+    Begin_Date = driver.find_element(By.XPATH, '//input[@id="dtBegin"]')
+    Begin_Date.send_keys("06/15/2022")
+    time.sleep(2)
+
+    End_Date = driver.find_element(By.XPATH, '//input[@id="dtEnd"]')
+    End_Date.send_keys("12/28/2022")
+    time.sleep(2)
+
+    Message = driver.find_element(By.XPATH, '//textarea[@id="MESSAGE"]')
+    Message.send_keys("Hello World")
+    time.sleep(2)
+
+    Category = driver.find_element(By.XPATH, '//select[@id="CATEGORYID"]')
+    Category.click()
+    time.sleep(1)
+
+
+    # number_list = [3]
+
+    image_url = driver.find_element(By.XPATH, '//input[@id="IMAGEURL"]')
+    image_url.send_keys("http://imsnepal.com:8080/ImsPosMem/upload_images/TEST/PROMOTIONSIMAGE/201924-test.jfif")
+    time.sleep(2)
+
+    Discount_Percent = driver.find_element(By.XPATH, '//input[@id="DiscountPercent"]')
+    Discount_Percent.clear()
+    Discount_Percent.send_keys("10%")
+    time.sleep(2)
+
+    # New_Product_old_Price
+    old_price = driver.find_element(By.XPATH, '//input[@id="OldPrice"]')
+    old_price.clear()
+    old_price.send_keys("500")
+    time.sleep(2)
+
+    # Product New Price
+    New_price = driver.find_element(By.XPATH, '//input[@id="NewPrice"]')
+    New_price.clear()
+    New_price.send_keys("700")
+    time.sleep(2)
+
+    # Submit the new category name.
+    Submit = driver.find_element(By.XPATH, '//input[@type="submit"]')
+    Submit.click()
+    time.sleep(2)
+
 if __name__ == '__main__':
     open_url()
